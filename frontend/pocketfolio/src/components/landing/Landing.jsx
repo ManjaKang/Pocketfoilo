@@ -170,6 +170,7 @@ const Landing = () => {
             내 포트폴리오를 전시하고, <br />
             다른 사람들의 포트폴리오도 구경해보세요
           </Description>
+          <Button onClick={handleNaviBtn}>바로 시작하기</Button>
         </Content2>
       </Frame>
     </Outer>
