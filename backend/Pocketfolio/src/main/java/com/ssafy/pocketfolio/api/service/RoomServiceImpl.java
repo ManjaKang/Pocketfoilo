@@ -384,8 +384,7 @@ public class RoomServiceImpl implements RoomService {
     public List<RoomListRes> findRoomBestList(long userSeq) {
         log.debug("[GET] Service - findRoomBestList");
         try {
-            List<Long> roomSeqs = roomLikeRepository.findRoomBestList(BEST_LIMIT); // TODO: JOIN으로 한 번에 처리하기
-            List<Room> rooms = roomRepository.findAllByRoomSeqIn(roomSeqs);
+            List<Room> rooms = roomRepository.findBestRoom(BEST_LIMIT);
             return getRoomListRes(rooms, userSeq);
         } catch (Exception e) {
             log.error(e.getMessage());
